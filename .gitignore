@@ -1,0 +1,28 @@
+# Auto-generated files
+/history
+/ido.last
+/projectile-bookmarks.eld
+/projects
+/recentf
+/tramp
+/places
+*.elc
+*~
+\#*
+.#*
+/.lsp-session-v1
+/.mc-lists.el
+
+# Package directories
+/elpa/
+/straight/
+/auto-save-list/
+/backups/
+
+# Session and temporary files
+/eshell/
+/transient/
+/tree-sitter/
+
+# Auto-save files
+snippets/
