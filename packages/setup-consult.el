@@ -26,8 +26,8 @@
   (consult-customize consult--source-buffer :hidden t :default nil)
   (add-to-list 'consult-buffer-sources persp-consult-source))
 
-(use-package consult-flycheck
-  :bind (("M-g f" . consult-flycheck)))
+;; (use-package consult-flycheck
+;;   :bind (("M-g f" . consult-flycheck)))
 
 (setq completion-in-region-function
       (lambda (&rest args)
