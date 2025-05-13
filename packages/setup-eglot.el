@@ -40,6 +40,14 @@
   (add-to-list 'eglot-server-programs
                '((python-mode python-ts-mode) "basedpyright-langserver" "--stdio")))
 
+(straight-use-package
+  '(el-patch :type git :host github :repo "jdtsmith/eglot-booster"))
+
+(use-package eglot-booster
+  :ensure nil
+  :after eglot
+  :config (eglot-booster-mode))
+
 ;; Configure Ruff via Flymake (replaces flymake-ruff)
 ;; (with-eval-after-load 'flymake
 ;;   (defun python-flymake-ruff-config ()
