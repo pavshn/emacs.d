@@ -3,7 +3,7 @@
 ;; The fast, beautiful text search that your Emacs deserves.
 
 (use-package deadgrep
-  :bind (("M-s s" . deadgrep)
+  :bind (("M-s g" . deadgrep)
          (:map deadgrep-mode-map
                ("q" . deadgrep-quit)))
 
