@@ -22,7 +22,8 @@
   "Setup Eglot for Python with BasedPyright and Ruff."
   (eglot-ensure)
   ;; Configure Ruff formatting on save
-  (add-hook 'before-save-hook 'ruff-format-buffer))
+  (add-hook 'before-save-hook 'ruff-format-buffer)
+  ())
 
 (use-package eglot
   :ensure t
@@ -40,11 +41,12 @@
   (add-to-list 'eglot-server-programs
                '((python-mode python-ts-mode) "basedpyright-langserver" "--stdio")))
 
-(straight-use-package
-  '(el-patch :type git :host github :repo "jdtsmith/eglot-booster"))
+;; (straight-use-package
+;;   '(el-patch :type git :host github :repo "jdtsmith/eglot-booster"))
 
 (use-package eglot-booster
-  :ensure nil
+  :vc (:url "https://github.com/jdtsmith/eglot-booster")
+  ;; :ensure nil
   :after eglot
   :config (eglot-booster-mode))
 
@@ -66,9 +68,9 @@
 
 ;;   (add-hook 'eglot-managed-mode-hook #'python-flymake-ruff-config))
 
-(use-package flymake-ruff
-  :ensure t
-  :hook (eglot-managed-mode . flymake-ruff-load))
+;; (use-package flymake-ruff
+;;   :ensure t
+;;   :hook (eglot-managed-mode . flymake-ruff-load))
 
 ;; Update faces for Eglot
 (custom-set-faces
@@ -144,8 +146,8 @@ Wraps around to the end if no highlight is found until the beginning."
         (goto-char (1- pos))))))
 
 ;; Optional keybindings
-(keymap-global-set "M-[" 'eglot-next-highlight)
-(keymap-global-set "M-]" 'eglot-previous-highlight)
+(keymap-global-set "M-]" 'eglot-next-highlight)
+(keymap-global-set "M-[" 'eglot-previous-highlight)
 
 (use-package eldoc-box
   :ensure t

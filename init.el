@@ -36,4 +36,3 @@
     (load file)))
 
 (use-package vterm :ensure t)
-  

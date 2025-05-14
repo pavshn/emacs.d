@@ -5,6 +5,9 @@
 
 (set-face-font 'default "Iosevka Comfy 11")
 
+;; Avoid auto adjusting the line numbers column
+(setq-default display-line-numbers-width 3)
+
 ;; Disable blinking
 (setq visible-bell       nil
       ring-bell-function #'ignore)
