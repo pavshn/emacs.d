@@ -11,6 +11,8 @@
 
 (keymap-global-set "C-g" #'keyboard-quit-dwim)
 
+(keymap-global-set "M-0" 'delete-other-windows)
+
 ;; Navigate paragraphs
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
