@@ -10,12 +10,16 @@
          ("C-x M-i" . consult-imenu-multi)
          ("C-x i" . consult-outline)
          ("C-x C-y" . consult-yank-from-kill-ring)
-         ;; ("C-v" . consult-line)
-         ;; ("M-v" . consult-line-multi)
+         ("C-v" . consult-line)
+         ("M-v" . consult-line-multi)
          ("M-g g" . consult-goto-line)
          ("M-g M-g" . consult-goto-line)
          ("M-y" . consult-yank-pop)
+         ;; Modifies buffer
          ("M-s k" . consult-keep-lines)
+         ;; Temporarily hide lines
+         ;; Use C-u prefix to show the hidden lines again
+         ("M-s f" . consult-focus-lines)
          ("M-s s" . consult-ripgrep)
          ("C-c d" . consult-flymake)
          ("C-x b" . consult-buffer))

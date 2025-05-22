@@ -4,8 +4,8 @@
 (keymap-global-set "C-," (lambda () (interactive) (other-window -1)))
 (keymap-global-set "C-." (lambda () (interactive) (other-window 1)))
 
-(keymap-global-set "C-v" 'scroll-down-half-page)
-(keymap-global-set "M-v" 'scroll-up-half-page)
+(keymap-global-set "<next>" 'scroll-down-half-page)
+(keymap-global-set "<prior>" 'scroll-up-half-page)
 
 (keymap-global-set "C-a" 'smart-beginning-of-line)
 
