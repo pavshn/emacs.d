@@ -1,11 +1,8 @@
-;;(global-set-key (kbd "C-.") 'scroll-up-line)
-;;(global-set-key (kbd "C-,") 'scroll-down-line)
-
 (keymap-global-set "C-," (lambda () (interactive) (other-window -1)))
 (keymap-global-set "C-." (lambda () (interactive) (other-window 1)))
 
-(keymap-global-set "<next>" 'scroll-down-half-page)
-(keymap-global-set "<prior>" 'scroll-up-half-page)
+(keymap-global-set "<next>" 'scroll-half-page-down)
+(keymap-global-set "<prior>" 'scroll-half-page-up)
 
 (keymap-global-set "C-a" 'smart-beginning-of-line)
 
@@ -16,6 +13,13 @@
 ;; Navigate paragraphs
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
+
+;; Faster vertical navigation
+(keymap-global-set "C-S-n" (lambda () (interactive) (ignore-errors (forward-line 5) (recenter))))
+(keymap-global-set "C-S-p" (lambda () (interactive) (ignore-errors (forward-line -5) (recenter))))
+
+;; Where was I again?
+(global-set-key (kbd "M-B") 'goto-last-modification)
 
 ;; Make C-<backspace> work as intended
 (keymap-global-set "C-<backspace>" 'kill-to-bol)
@@ -33,45 +37,22 @@
     (when (= pt (point))
       (move-beginning-of-line 1))))
 
-(defun scroll-half-page-up ()
-  "scroll down half the page"
-  (interactive)
-  (scroll-down (/ (window-body-height) 2)))
-
 (defun scroll-half-page-down ()
-  "scroll up half the page"
+  "Scroll down half a page, emulating vim's C-d."
   (interactive)
-  (scroll-up (/ (window-body-height) 2)))
+  (let ((half-height (/ (window-height) 2)))
+  (ignore-errors (forward-line half-height) (recenter))))
 
-(defun scroll-down-half-page ()
-  "scroll down half a page while keeping the cursor centered"
+(defun scroll-half-page-up ()
+  "Scroll up half a page, emulating vim's C-u."
   (interactive)
-  (let ((ln (line-number-at-pos (point)))
-        (lmax (line-number-at-pos (point-max))))
-    (cond
-     ((= ln 1)
-      (move-to-window-line nil))
-     ((= ln lmax)
-      (recenter (window-end)))
-     (t
-      (progn
-        (move-to-window-line -1)
-        (recenter))))))
+  (let ((half-height (/ (window-height) 2)))
+  (ignore-errors (forward-line (- half-height)) (recenter))))
 
-(defun scroll-up-half-page ()
-  "scroll up half a page while keeping the cursor centered"
+(defun goto-last-modification ()
   (interactive)
-  (let ((ln (line-number-at-pos (point)))
-        (lmax (line-number-at-pos (point-max))))
-    (cond
-     ((= ln 1)
-      nil)
-     ((= ln lmax)
-      (move-to-window-line nil))
-     (t
-      (progn
-        (move-to-window-line 0)
-        (recenter))))))
+  (undo-fu-only-undo)
+  (undo-fu-only-redo))
 
 (defun keyboard-quit-dwim ()
 "Do-What-I-Mean behaviour for a general `keyboard-quit'.
