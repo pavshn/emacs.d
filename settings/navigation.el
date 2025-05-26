@@ -3,6 +3,8 @@
 
 (keymap-global-set "<next>" 'scroll-half-page-down)
 (keymap-global-set "<prior>" 'scroll-half-page-up)
+(keymap-global-set "C-v" 'scroll-half-page-down)
+(keymap-global-set "M-v" 'scroll-half-page-up)
 
 (keymap-global-set "C-a" 'smart-beginning-of-line)
 
