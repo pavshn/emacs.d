@@ -4,8 +4,6 @@
 (defun eglot-go-config ()
   "Setup Eglot Go config."
   (eglot-ensure)
-  (add-hook 'go-mode-hook 'eglot-ensure)
-  (setq-local eglot-ignored-server-capabilities '(:documentHighlightProvider))
   (add-hook 'before-save-hook #'eglot-format-buffer nil t))
 
 (defun eglot-rust-config ()
