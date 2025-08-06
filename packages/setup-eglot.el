@@ -1,6 +1,30 @@
 (use-package rust-mode
   :init)
 
+(use-package racket-mode
+  :ensure t)
+
+;; Enable scala-mode and sbt-mode
+(use-package scala-ts-mode
+  :interpreter ("scala" . scala-mode)
+  :hook (scala-ts-mode . eglot-ensure)
+  :init
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs '(scala-mode . ("metals")))
+    (add-to-list 'eglot-server-programs '(scala-ts-mode . ("metals")))))
+
+(use-package sbt-mode
+  :after scala-ts-mode
+  :config
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map)
+  (setq sbt:program-options '("-Dsbt.supershell=false"))
+
+  (which-key-add-keymap-based-replacements sbt-mode-map
+    "C-c s" '("SBT hydra" . sbt-hydra)))
+
 (defun eglot-go-config ()
   "Setup Eglot Go config."
   (eglot-ensure)
@@ -20,8 +44,7 @@
   "Setup Eglot for Python with BasedPyright and Ruff."
   (eglot-ensure)
   ;; Configure Ruff formatting on save
-  (add-hook 'before-save-hook 'ruff-format-buffer)
-  ())
+  (add-hook 'before-save-hook 'ruff-format-buffer))
 
 (use-package eglot
   :ensure t

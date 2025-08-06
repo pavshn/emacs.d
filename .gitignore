@@ -18,6 +18,7 @@
 /straight/
 /auto-save-list/
 /backups/
+/racket-mode/
 
 # Session and temporary files
 /eshell/

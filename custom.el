@@ -9,7 +9,8 @@
  '(global-hl-line-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages nil)
- '(show-paren-delay 0.03))
+ '(show-paren-delay 0.03)
+ '(treesit-font-lock-level 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
