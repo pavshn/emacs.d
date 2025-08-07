@@ -1,3 +1,10 @@
+(use-package clang-format
+  :config
+  (setq clang-format-fallback-style "LLVM")
+  (setq clang-format-on-save-p 'always)
+
+  :hook (c++-mode . clang-format-on-save-mode))
+
 (use-package rust-mode
   :init)
 
@@ -30,6 +37,10 @@
   (eglot-ensure)
   (add-hook 'before-save-hook #'eglot-format-buffer nil t))
 
+(defun eglot-c++-config ()
+  "Setup Eglot C++ config."
+  (eglot-ensure))
+
 (defun eglot-rust-config ()
   "Setup Eglot Rust config."
   (eglot-ensure)
@@ -50,7 +61,8 @@
   :ensure t
   :hook ((python-mode . eglot-python-config)
          (rust-mode . eglot-rust-config)
-         (go-mode . eglot-go-config))
+         (go-mode . eglot-go-config)
+         (c++-mode . eglot-c++-config))
   :config
   (setq eglot-send-changes-idle-time 0.5)
   ;; Server configurations
