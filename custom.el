@@ -9,6 +9,8 @@
  '(global-hl-line-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages nil)
+ '(package-vc-selected-packages
+   '((eglot-booster :url "https://github.com/jdtsmith/eglot-booster")))
  '(show-paren-delay 0.03)
  '(treesit-font-lock-level 4))
 (custom-set-faces
