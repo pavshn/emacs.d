@@ -49,7 +49,8 @@
 
   :config
   ;; No need for rich annotations when just switching buffers
-  (setcdr (assq 'buffer marginalia-annotator-registry)
-          '(none marginalia-annotate-buffer builtin)))
+  ;;;(setcdr (assq 'buffer marginalia-annotator-registry)
+          ;;;'(none marginalia-annotate-buffer builtin))
+  )
 
 (provide 'setup-vertico)
