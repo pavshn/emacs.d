@@ -1,4 +1,4 @@
-;; C-z toggles evil/emacs modes
+;; C-z toggles evil/emacs modes in current buffer
 (use-package evil
   :ensure t
   :init
@@ -9,10 +9,19 @@
   :config
   (evil-mode 1)
 
-  ;; Basic Evil mode configurations
-  (setq evil-normal-state-cursor 'box)  ; Normal state cursor
-  (setq evil-insert-state-cursor 'bar)  ; Insert state cursor
-  (setq evil-visual-state-cursor 'hollow)  ; Visual state cursor
+  ;; Display state info in mode line
+  (setq evil-normal-state-tag  " N "
+        evil-insert-state-tag  " I "
+        evil-visual-state-tag  " V "
+        evil-motion-state-tag  " M "
+        evil-emacs-state-tag   " E "
+        evil-operator-state-tag " OP ")
+  
+  ;; Set cursor style and color based on Evil state
+  (setq evil-normal-state-cursor '(box "#fbf1c7") ; Normal
+        evil-insert-state-cursor '(bar "#fbf1c7") ; Insert
+        evil-visual-state-cursor '(box "#458588") ; Visual
+        evil-emacs-state-cursor '(box "#f86155")) ; Emacs
   
   ;; Remap basic keybindings
   (define-key evil-normal-state-map (kbd "H") 'previous-buffer)
@@ -20,6 +29,7 @@
   (define-key evil-normal-state-map (kbd "C-k") 'kill-line)  ; C-k to kill line in normal mode
   (define-key evil-normal-state-map (kbd "C-w") 'evil-window-map)  ; C-w for window commands
   (define-key evil-insert-state-map (kbd "C-g") #'evil-normal-state) ; C-g to exit the insert mode
+  (define-key evil-insert-state-map (kbd "C-c C-c") #'evil-normal-state) ; C-c C-c - same
   (define-key evil-visual-state-map (kbd "p") 'evil-paste-after)  ; Paste in visual mode
   
   ;; Enable line numbers in normal state
