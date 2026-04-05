@@ -16,6 +16,6 @@
 
 ;; Set default window size
 (setq initial-frame-alist
-      (append initial-frame-alist '((width . 140) (height . 56))))
+      (append initial-frame-alist '((width . 200) (height . 70))))
 
 (provide 'appearance)
