@@ -15,6 +15,8 @@
   (setq evil-visual-state-cursor 'hollow)  ; Visual state cursor
   
   ;; Remap basic keybindings
+  (define-key evil-normal-state-map (kbd "H") 'previous-buffer)
+  (define-key evil-normal-state-map (kbd "L") 'next-buffer)
   (define-key evil-normal-state-map (kbd "C-k") 'kill-line)  ; C-k to kill line in normal mode
   (define-key evil-normal-state-map (kbd "C-w") 'evil-window-map)  ; C-w for window commands
   (define-key evil-insert-state-map (kbd "C-g") #'evil-normal-state) ; C-g to exit the insert mode
