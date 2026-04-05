@@ -33,5 +33,8 @@
 (emacs-solo/avoid-initial-flash-of-light)                           ; HACK start
 (add-hook 'after-init-hook #'emacs-solo/reset-default-foreground)   ; HACK undo
 
+;; Fix resize issue on Plasma
+(setq frame-resize-pixelwise t)
+
 (provide 'early-init)
 ;;; early-init.el ends here
