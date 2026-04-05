@@ -21,7 +21,7 @@
          ;; Use C-u prefix to show the hidden lines again
          ("M-s f" . consult-focus-lines)
          ("M-s s" . consult-ripgrep)
-         ("C-c d" . consult-flymake)
+         ;; ("C-c d" . consult-flymake)
          ("C-x b" . consult-buffer))
 
   :after (perspective)
@@ -30,8 +30,8 @@
   ;; Show only perspective-buffers with consult-buffer
   (add-to-list 'consult-buffer-sources persp-consult-source))
 
-;; (use-package consult-flycheck
-;;   :bind (("M-g f" . consult-flycheck)))
+(use-package consult-flycheck
+  :bind (("M-g f" . consult-flycheck)))
 
 (setq completion-in-region-function
       (lambda (&rest args)
