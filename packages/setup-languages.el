@@ -11,9 +11,9 @@
   :init
   (setq haskell-process-type 'cabal-new-repl
         haskell-process-log t)
-  :hook (haskell-mode . (haskell-indent-mode
-                         interactive-haskell-mode
-                         haskell-doc-mode)))
+  :hook ((haskell-mode . haskell-indent-mode)
+         (haskell-mode . interactive-haskell-mode)
+         (haskell-mode . haskell-doc-mode)))
 
 (use-package rust-mode
   :ensure t)
