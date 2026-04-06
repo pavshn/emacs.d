@@ -11,6 +11,7 @@
   (("s-p" . projectile-command-map))
 
   :bind
+  ("C-x p a" . projectile-add-known-project)
   ("C-x p p" . projectile-switch-project)
   ("C-x p e" . my/projectile-switch-project-to-emacs)
 
