@@ -1,5 +1,11 @@
 ;;; setup-languages.el --- Programming language modes -*- lexical-binding: t; -*-
 
+(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+(use-package neocaml
+  :ensure t)
+(use-package dune
+  :ensure t)
+
 (use-package clang-format
   :hook (c++-mode . clang-format-on-save-mode)
   :config
@@ -15,10 +21,10 @@
          (haskell-mode . interactive-haskell-mode)
          (haskell-mode . haskell-doc-mode)))
 
-(use-package rust-mode
+(use-package racket-mode
   :ensure t)
 
-(use-package racket-mode
+(use-package rust-mode
   :ensure t)
 
 (use-package scala-ts-mode
