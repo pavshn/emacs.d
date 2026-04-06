@@ -6,7 +6,7 @@
  '(corfu-popupinfo-delay '(1.25 . 0.5))
  '(display-line-numbers 'visual)
  '(eldoc-idle-delay 0.1)
- '(global-hl-line-mode t)
+ '(global-hl-line-mode nil)
  '(inhibit-startup-screen t)
  '(package-selected-packages nil)
  '(package-vc-selected-packages
