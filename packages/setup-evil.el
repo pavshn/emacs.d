@@ -32,13 +32,14 @@
   (define-key evil-insert-state-map (kbd "C-c C-c") #'evil-normal-state) ; C-c C-c - same
   (define-key evil-visual-state-map (kbd "p") 'evil-paste-after)  ; Paste in visual mode
   
-  ;; Enable line numbers in normal state
-  (evil-set-initial-state 'text-mode 'emacs)  ; Keep text-mode in Emacs state (non-Vim)
+  ;; Keep emacs state in the following modes
+  (evil-set-initial-state 'vterm-mode 'emacs)
+  (evil-set-initial-state 'dired-mode 'emacs)
 )
 
 ;; Keybinding for Evil mode (for convenience)
-(use-package evil-collection
-  :after evil
-  :ensure t
-  :config
-  (evil-collection-init))  ; Initializes all Evil bindings for common modes
+;;(use-package evil-collection
+;;  :after evil
+;;  :ensure t
+;;  :config
+;;  (evil-collection-init))  ; Initializes all Evil bindings for common modes
