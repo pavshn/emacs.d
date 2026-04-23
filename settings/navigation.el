@@ -27,6 +27,9 @@
 ;; Make C-<backspace> work as intended
 (keymap-global-set "C-<backspace>" 'kill-to-bol)
 
+;; F5 to run last shell command
+(global-set-key (kbd "<f5>") (lambda () (interactive) (shell-command (car shell-command-history))))
+
 (defun kill-to-bol ()
   "Kill from point to beginning of line."
   (interactive)

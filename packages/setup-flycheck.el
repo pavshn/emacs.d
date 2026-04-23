@@ -12,3 +12,6 @@
 
 (with-eval-after-load 'rust-mode
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
+(with-eval-after-load 'flycheck
+  (setq-default flycheck-clang-language-standard "c++26"))
