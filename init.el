@@ -36,3 +36,4 @@
     (load file)))
 
 (server-mode 1)
+(setq org-startup-with-inline-images t)

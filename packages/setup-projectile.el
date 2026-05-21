@@ -14,6 +14,7 @@
   ("C-x p a" . projectile-add-known-project)
   ("C-x p p" . projectile-switch-project)
   ("C-x p e" . my/projectile-switch-project-to-emacs)
+  ("C-x p o" . my/projectile-switch-project-to-kb)
 
   :config
   (projectile-mode +1)
@@ -37,6 +38,10 @@
 (defun my/projectile-switch-project-to-emacs ()
   (interactive)
   (projectile-switch-project-by-name "~/.emacs.d/"))
+
+(defun my/projectile-switch-project-to-kb ()
+  (interactive)
+  (projectile-switch-project-by-name org-directory))
 
 ;; TODO: add command to run make with the ability to choose target via minibuf
 

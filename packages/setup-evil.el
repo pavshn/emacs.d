@@ -36,6 +36,7 @@
   (evil-set-initial-state 'vterm-mode 'emacs)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'deadgrep-mode 'emacs)
+  (evil-set-initial-state 'org-mode 'emacs)
 )
 
 ;; Keybinding for Evil mode (for convenience)
