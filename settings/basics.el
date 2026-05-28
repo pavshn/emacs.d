@@ -66,4 +66,7 @@
 (setq-default fill-column 79)
 (global-display-fill-column-indicator-mode t)
 
+;; No electric indent
+(setq electric-indent-mode nil)
+
 (provide 'basics)
