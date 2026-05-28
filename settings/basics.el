@@ -69,4 +69,8 @@
 ;; No electric indent
 (setq electric-indent-mode nil)
 
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
+
 (provide 'basics)
