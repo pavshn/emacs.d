@@ -27,3 +27,5 @@
 
   :bind
   ("C-c c" . org-capture))
+
+(setq org-startup-with-inline-images t)
