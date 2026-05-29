@@ -1,7 +1,8 @@
 (use-package flycheck
   :ensure t
   :defer t
-  :hook (prog-mode . flycheck-mode)
+  :hook ((prog-mode . flycheck-mode)
+         (haskell-mode . (lambda () (flycheck-mode -1))))
   :bind (:map flycheck-mode-map
               ("M-9" . flycheck-next-error)
               ("M-8" . flycheck-previous-error)

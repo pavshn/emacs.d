@@ -12,14 +12,24 @@
   (setq clang-format-fallback-style "LLVM"
         clang-format-on-save-p 'always))
 
+;; (use-package haskell-mode
+;;   :ensure t
+;;   :init
+;;   (setq haskell-process-type 'cabal-new-repl
+;;         haskell-process-log t)
+;;   :hook ((haskell-mode . haskell-indent-mode)
+;;          (haskell-mode . interactive-haskell-mode)
+;;          (haskell-mode . haskell-doc-mode)))
+
 (use-package haskell-mode
   :ensure t
-  :init
-  (setq haskell-process-type 'cabal-new-repl
-        haskell-process-log t)
-  :hook ((haskell-mode . haskell-indent-mode)
-         (haskell-mode . interactive-haskell-mode)
-         (haskell-mode . haskell-doc-mode)))
+  :mode ("\\.hs\\'" "\\.lhs\\'"))
+
+(use-package ormolu
+ :hook (haskell-mode . ormolu-format-on-save-mode)
+ :bind
+ (:map haskell-mode-map
+   ("C-c f" . ormolu-format-buffer)))
 
 (use-package racket-mode
   :ensure t)
