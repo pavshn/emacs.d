@@ -67,7 +67,7 @@
 (global-display-fill-column-indicator-mode t)
 
 ;; No electric indent
-(setq electric-indent-mode nil)
+;; (setq electric-indent-mode nil)
 
 (use-package exec-path-from-shell
   :config
