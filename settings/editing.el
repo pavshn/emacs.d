@@ -1,7 +1,9 @@
-(global-set-key (kbd "C--") 'undo)
+(keymap-global-set "C-c \\" 'fill-region)
+
+(keymap-global-set "C--" 'undo)
 
 ;; Killing words backwards
-(global-set-key (kbd "C-w") 'kill-region-or-backward-word)
+(keymap-global-set "C-w" 'kill-region-or-backward-word)
 
 (defun kill-region-or-backward-word ()
   (interactive)
