@@ -1,0 +1,1 @@
+(("/home/pavshn/.emacs.d/" ("custom.el" 7 1787813765) ("packages/setup-which-key.el" 1 1787812626) ("packages/setup-evil.el" 2 1787812682) ("settings/editing.el" 1 1787813646) ("init.el" 2 1787813771)))
