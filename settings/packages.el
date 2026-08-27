@@ -1,6 +1,7 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
 
 (setq packages-dir (expand-file-name "packages" user-emacs-directory))
 (add-to-list 'load-path packages-dir)

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; Instrument a `command' to store the current window configuration in
 ;; `register' and then going fullscreen.
 (defmacro wrap-fullscreen (command)

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (keymap-global-set "C-," (lambda () (interactive) (other-window -1)))
 (keymap-global-set "C-." (lambda () (interactive) (other-window 1)))
 

@@ -1,6 +1,6 @@
 ;;; setup-languages.el --- Programming language modes -*- lexical-binding: t; -*-
 
-(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;;(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
 (use-package neocaml
   :ensure t)
 (use-package dune

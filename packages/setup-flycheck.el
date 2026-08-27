@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package flycheck
   :ensure t
   :defer t
@@ -9,10 +11,11 @@
               ("C-c ! n" . flycheck-next-error)
               ("C-c ! p" . flycheck-previous-error)
               ("C-c ! l" . flycheck-list-errors)
-              ("C-c ! t" . flycheck-mode)))
-
-(with-eval-after-load 'rust-mode
-  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-
-(with-eval-after-load 'flycheck
+              ("C-c ! t" . flycheck-mode))
+  :config
   (setq-default flycheck-clang-language-standard "c++26"))
+
+(use-package flycheck-rust
+  :ensure t
+  :after flycheck
+  :hook (rust-mode . flycheck-rust-setup))

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; C-z toggles evil/emacs modes in current buffer
 (use-package evil
   :ensure t
@@ -7,7 +8,7 @@
         evil-want-keybinding nil
         evil-want-C-i-jump t)
   :config
-  (evil-mode 1)
+  (evil-mode 0)
 
   ;; Display state info in mode line
   (setq evil-normal-state-tag  " N "

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; Based
 (use-package gruvbox-theme
   :ensure t

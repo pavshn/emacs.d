@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; Autocomplete
 (use-package corfu
   :ensure t

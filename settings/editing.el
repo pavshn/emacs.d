@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (keymap-global-set "C-c \\" 'fill-region)
 
 (keymap-global-set "C--" 'undo)
